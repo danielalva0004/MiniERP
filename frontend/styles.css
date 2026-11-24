@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f3f6fa;
+  color: #17263c;
+  font: 1rem/1.5 system-ui, sans-serif;
+}
+
+.contenedor {
+  width: min(1080px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.encabezado {
+  background: #17263c;
+  color: #fff;
+  padding-block: 1rem;
+}
+
+.marca {
+  font-size: 1.25rem;
+  font-weight: 750;
+}
+
+main {
+  display: grid;
+  gap: 1rem;
+  padding-block: 2rem;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(1.6rem, 4vw, 2.25rem);
+}
+
+h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.15rem;
+}
+
+.indicadores,
+.campos {
+  display: grid;
+  gap: 1rem;
+}
+
+.indicadores {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+}
+
+.campos {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+}
+
+.tarjeta {
+  min-width: 0;
+  padding: 1.15rem;
+  background: #fff;
+  border: 1px solid #dbe3ed;
+  border-radius: 0.75rem;
+}
+
+.indicadores h2 {
+  font-size: 0.9rem;
+  color: #465872;
+  margin-bottom: 0.25rem;
+}
+
+.indicadores p {
+  font-size: 1.6rem;
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+input,
+select,
+button {
+  font: inherit;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.4rem;
+}
+
+input,
+select {
+  width: 100%;
+  background: #fff;
+  color: inherit;
+  border: 1px solid #8697ac;
+}
+
+button {
+  border: 1px solid transparent;
+  background: #1951a1;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #133e7b;
+}
+
+:focus-visible {
+  outline: 3px solid #2872ca;
+  outline-offset: 3px;
+}
+
+#error-formulario {
+  margin-block: 0.75rem;
+  color: #a42424;
+}
+
+.tabla {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid #dbe3ed;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+th {
+  background: #eef3fa;
+}
+
+.estado {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.4rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.pagada {
+  background: #ddf4e7;
+  color: #175b39;
+}
+
+.pendiente {
+  background: #fff0d0;
+  color: #795000;
+}
+
+.eliminar {
+  background: #fff;
+  color: #9c2323;
+  border-color: #e9b8b8;
+}
+
+.eliminar:hover {
+  background: #fce9e9;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MiniERP | Panel de facturación</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="encabezado">
+    <div class="contenedor marca">MiniERP</div>
+  </header>
+
+  <main class="contenedor">
+    <h1>Panel de facturación</h1>
+
+    <section class="indicadores" aria-label="Resumen de facturación" aria-live="polite">
+      <div class="tarjeta">
+        <h2>Total facturado</h2>
+        <p id="total-facturado">$0</p>
+      </div>
+      <div class="tarjeta">
+        <h2>Total de facturas</h2>
+        <p id="total-facturas">0</p>
+      </div>
+      <div class="tarjeta">
+        <h2>Dinero pendiente</h2>
+        <p id="dinero-pendiente">$0</p>
+      </div>
+    </section>
+
+    <section class="tarjeta" aria-labelledby="titulo-formulario">
+      <h2 id="titulo-formulario">Nueva factura</h2>
+      <form id="form-factura" novalidate>
+        <div class="campos">
+          <div>
+            <label for="cliente">Cliente</label>
+            <input id="cliente" name="cliente" type="text" required>
+          </div>
+          <div>
+            <label for="concepto">Concepto</label>
+            <input id="concepto" name="concepto" type="text" required>
+          </div>
+          <div>
+            <label for="valor">Valor (COP)</label>
+            <input id="valor" name="valor" type="number" step="any" required>
+          </div>
+          <div>
+            <label for="estado">Estado</label>
+            <select id="estado" name="estado" required>
+              <option value="">Selecciona un estado</option>
+              <option value="Pagada">Pagada</option>
+              <option value="Pendiente">Pendiente</option>
+            </select>
+          </div>
+        </div>
+        <p id="error-formulario" role="alert"></p>
+        <button type="submit">Guardar factura</button>
+      </form>
+    </section>
+
+    <section class="tarjeta" aria-labelledby="titulo-facturas">
+      <h2 id="titulo-facturas" tabindex="-1">Facturas</h2>
+      <div class="tabla" role="region" aria-labelledby="titulo-facturas" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">N°</th>
+              <th scope="col">Cliente</th>
+              <th scope="col">Concepto</th>
+              <th scope="col">Valor</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Acción</th>
+            </tr>
+          </thead>
+          <tbody id="facturas">
+            <tr><td colspan="6">No hay facturas registradas.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
